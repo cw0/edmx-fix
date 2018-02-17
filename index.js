@@ -25,7 +25,7 @@ fs.readFile(file, (err, contents) => {
   }
 
   let seen = {};
-  entityNames.map(function(name) {
+  entityNames.map((name) => {
     if (seen.hasOwnProperty(name)) {
       console.log(name);
     } else {
