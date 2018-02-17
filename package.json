@@ -9,6 +9,9 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.2"
   },
+  "scripts": {
+    "start": "node index.js"
+  },
   "jshintConfig": {
     "esversion": 6 
   }
