@@ -1,7 +1,10 @@
 const Cheerio = require('cheerio');
 const fs = require('fs');
 
-fs.readFile('files/ClientTemplateModel.edmx.diagram', (err, contents) => {
+const selector = 'entityset';
+const file = 'files/ClientTemplateModel.edmx';
+
+fs.readFile(file, (err, contents) => {
   if (err)
   {
     if (err.code === 'ENOENT') {
@@ -12,13 +15,13 @@ fs.readFile('files/ClientTemplateModel.edmx.diagram', (err, contents) => {
   } 
 
   const $ = Cheerio.load(contents);
-
-  const shapes = $('entitytypeshape');
-
+ 
+  const shapes = $(selector);
+  
   let entityNames = [];
 
   for (let i = 0; i < shapes.length; i++) {
-    entityNames.push(shapes[i].attribs.entitytype);
+    entityNames.push(shapes[i].attribs.name);
   }
 
   let seen = {};
