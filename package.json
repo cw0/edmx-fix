@@ -1,0 +1,15 @@
+{
+  "name": "edmx-fix",
+  "version": "1.0.0",
+  "description": "check for and maybe eventually repair duplicate edmx keys",
+  "main": "index.js",
+  "repository": "https://github.com/cw0/edmx-fix.git",
+  "author": "cw0",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2"
+  },
+  "jshintConfig": {
+    "esversion": 6 
+  }
+}
